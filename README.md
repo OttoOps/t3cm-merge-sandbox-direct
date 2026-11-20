@@ -6,4 +6,4 @@ used by anything else.
 
 `ci/result` sets the `check` job's outcome (`pass`, `fail`, or
 `fail-in-queue`, which fails only in the merge queue), and `ci/delay` how many
-seconds it waits first.
+seconds a pull request run waits first.

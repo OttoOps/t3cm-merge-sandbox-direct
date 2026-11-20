@@ -15,6 +15,6 @@ jobs:
         run: |
           delay=$(cat ci/delay 2>/dev/null || echo 0)
           result=$(cat ci/result 2>/dev/null || echo pass)
-          sleep "$delay"
+          if [ "$EVENT" = pull_request ]; then sleep "$delay"; fi
           if [ "$result" = fail ]; then exit 1; fi
           if [ "$result" = fail-in-queue ] && [ "$EVENT" = merge_group ]; then exit 1; fi
